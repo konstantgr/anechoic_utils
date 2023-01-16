@@ -10,7 +10,6 @@ packages = [{include = "anechoic_utils"}]
 python = ">=3.9,<3.12"
 numpy = "^1.23.3"
 rsinstrument = "^1.53.0"
-pywin32 = "^305"
 
 [build-system]
 requires = ["poetry-core"]
