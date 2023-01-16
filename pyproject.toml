@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "anechoic_utils"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 numpy = "^1.24.1"
 rsinstrument = "^1.53.0"
 
