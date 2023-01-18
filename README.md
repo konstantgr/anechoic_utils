@@ -112,3 +112,36 @@ scanner.goto(new_position)
 
 # Анализатор
 
+Для начала работы с анализатором изначально нужно создать 
+эксземпляр соответствующего класса и установить соединение с анализатором.
+    
+```python
+from anechoic_utils.analyzator.socket_analyzer import SocketAnalyzer
+
+analyzer = SocketAnalyzer(ip="192.168.137.119", port=1024)
+analyzer.connect()
+```
+
+Далее можно задать настройки анализатора, такие как 
+1. `sweep_type` - scale возвращаемых значений
+2. `freq_start` - начальная частота в Гц
+3. `freq_finish` - конечная частота в Гц
+4. `freq_num` - количество точек по частоте
+5. `bandwidth=3000` - полоса в Гц
+6. `aver_fact`, `smooth_aper`, `power` - остальные параметры, соответствующие параметрам анализатора
+```python
+analyzer.set_settings(
+    sweep_type='LIN', 
+    freq_start=1_000_000_000, freq_stop=3_000_000_000, freq_num=200, 
+    bandwidth=3000, aver_fact=5, smooth_aper=20, power=5
+)
+```
+
+После того, как заданы настройки анализатора можно снять данные с анализатора и использовать их в дальнейшем коде
+```python
+results = analyzer.get_scattering_parameters(
+    ['S22', 'S12', 'S12', 'S12', 'S12', 'S12', 'S12', 'S12', 'S12', 'S12']
+)
+
+print(results['f'], results['S22'])
+```

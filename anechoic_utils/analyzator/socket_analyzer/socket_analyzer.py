@@ -3,8 +3,8 @@ import threading
 import time
 
 from typing import List, Union
-from src.analyzator.base_analyzator import BaseAnalyzer, AnalyzerSignals, AnalyzerConnectionError
-from src.utils import EmptySignal
+from anechoic_utils.analyzator.base_analyzator import BaseAnalyzer, AnalyzerSignals, AnalyzerConnectionError
+from anechoic_utils.utils import EmptySignal
 import numpy as np
 
 
