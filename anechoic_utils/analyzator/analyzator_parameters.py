@@ -24,6 +24,7 @@ class AnalyzatorType(Enum):
     ROHDE_SCHWARZ = 'ROHDE_SCHWARZ'
     CEYEAR = 'CEYEAR'
     PLANAR = 'PLANAR'
+    SOCKET = 'SOCKET'
 
 
 @unique
